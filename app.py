@@ -37,7 +37,7 @@ file  = st.file_uploader("Upload leaf image",
                           type=['jpg','jpeg','png'])
 if file:
     img  = Image.open(file).convert('RGB')
-    st.image(img, caption="Your leaf", use_column_width=True)
+    st.image(img, caption="Your leaf", width="stretch")
     label, conf = predict(img, model)
     if label == 'healthy':
         st.success(f"✅ Healthy — {conf*100:.1f}% confident")
